@@ -26,25 +26,25 @@ All projects will require the following:
 ## Phase 0: Force Selection, Analysis & Plan
 ---------- 
 
-#### Custom Force: NAME OF YOUR FORCE
+#### Custom Force: Electrostatic Force
 
 ### Forumla
 What is the formula for your force? Including descriptions/definitions for the symbols. (You may include a picture of the formula if it is not easily typed.)
 
-YOUR ANSWER HERE
+(kq1q2)/(r^2)
 
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
   - YOUR ANSWER HERE
 
 - Does this force require any new constants, if so what are they and what values will you try initially?
-  - YOUR ANSWER HERE
+  - k, and we will use 9 * 10^9
 
 - Does this force require any new information to be added to the `Orb` class? If so, what is it and what data type will you use?
-  - YOUR ANSWER HERE
+  - int charge
 
 - Does this force interact with other `Orbs`, or is it applied based on the environment?
-  - YOUR ANSWER HERE
+  - other Orbs
 
 - In order to calculate this force, do you need to perform extra intermediary calculations? If so, what?
   - YOUR ANSWER HERE
