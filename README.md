@@ -47,7 +47,7 @@ What is the formula for your force? Including descriptions/definitions for the s
   - other Orbs
 
 - In order to calculate this force, do you need to perform extra intermediary calculations? If so, what?
-  - YOUR ANSWER HERE
+  - Calculate how applyForce will effect a specific object.
 
 --- 
 
