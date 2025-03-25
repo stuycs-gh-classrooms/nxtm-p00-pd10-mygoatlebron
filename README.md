@@ -53,20 +53,22 @@ What is the formula for your force? Including descriptions/definitions for the s
 
 ### Simulation 1: Gravity
 Describe how you will attempt to simulate orbital motion.
+
 We will use the equation g(m1*m2)/r^2 to simulate gravity and have each orb of the orbList effect each other orb once.
+
 --- 
 
 ### Simulation 2: Spring
 Describe what your spring simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+Depending on the length of each spring between the orbs, there will be a force applied, for example if the spring is elongated, a force will bring them together, and viee versa for compression. On the screen, it should look like 2 lines between the orbs that will change color based on length compared to original length.
 
 --- 
 
 ### Simulation 3: Drag
 Describe what your drag simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+
 
 --- 
 
