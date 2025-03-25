@@ -68,7 +68,7 @@ Depending on the length of each spring between the orbs, there will be a force a
 ### Simulation 3: Drag
 Describe what your drag simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-
+The drag should constantly lower the directional velocity of all orb objects when it is on, and it should appear as if each orb is slowing down the more they travels.
 
 --- 
 
