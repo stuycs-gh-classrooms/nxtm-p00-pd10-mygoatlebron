@@ -35,10 +35,10 @@ What is the formula for your force? Including descriptions/definitions for the s
 
 ### Custom Force
 - What information that is already present in the `Orb` or `OrbNode` classes does this force use?
-  - mass, center
+  - center
 
 - Does this force require any new constants, if so what are they and what values will you try initially?
-  - k, and we will use 9 * 10^9
+  - k, and we will use 9 * 10^9 and charge using the value for one elementary charge
 
 - Does this force require any new information to be added to the `Orb` class? If so, what is it and what data type will you use?
   - int charge
