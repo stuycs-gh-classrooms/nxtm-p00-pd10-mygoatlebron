@@ -3,7 +3,7 @@
 ### NeXTCS
 ### Period: 10
 ## Name0: Eviss Wu
-## Name1: OTHER NAME HERE (delete this line if you are working solo)
+## Name1: Sebastian Tecza
 ---
 
 This project will be completed in phases. The first phase will be to work on this document. Use github-flavoured markdown. (For more markdown help [click here](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) or [here](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax) )
