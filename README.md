@@ -53,7 +53,7 @@ What is the formula for your force? Including descriptions/definitions for the s
 
 ### Simulation 1: Gravity
 Describe how you will attempt to simulate orbital motion.
-
+We will use the equation g(m1*m2)/r^2 to simulate gravity and have each orb of the orbList effect each other orb once.
 --- 
 
 ### Simulation 2: Spring
