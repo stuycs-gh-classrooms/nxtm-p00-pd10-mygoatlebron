@@ -75,12 +75,12 @@ The drag should constantly lower the directional velocity of all orb objects whe
 ### Simulation 4: Custom force
 Describe what your Custom force simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+The charge will be an integer and depending on that integer, we will use our charge equation as labelled above to attract/repel orbs from each other.
 
 --- 
 
 ### Simulation 5: Combination
 Describe what your combination simulation will look like. Explain how it will be setup, and how it should behave while running.
 
-YOUR ANSWER HERE
+All of the forces will be running as stated above however, we expect for the electromagnetic force to be stronger than gravity.
 
