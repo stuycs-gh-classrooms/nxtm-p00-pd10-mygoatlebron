@@ -3,17 +3,17 @@ int MIN_SIZE = 10;
 int MAX_SIZE = 60;
 float MIN_MASS = 10;
 float MAX_MASS = 100;
-float G_CONSTANT = 0.2;
-float D_COEF = 0.1;
+float G_CONSTANT = 0.1;
+float D_COEF = 0.09;
 
-int SPRING_LENGTH = 50;
+int SPRING_LENGTH = 150;
 float  SPRING_K = 0.005;
 
 int GRAVITY = 0;
 int DRAGF = 1;
 int SPRINGF = 2;
 boolean[] toggles = new boolean[3];
-String[] modes = {"Gravity", "Drag", "Spring Force"};
+String[] modes = {"Gravity", "Drag", "Spring"};
 
 OrbList OrbsList = new OrbList();
 

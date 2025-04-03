@@ -14,7 +14,7 @@ class OrbNode extends Orb {
   
   void display() {
     super.display();
-    if (next != null) {
+    if (next != null && toggles[2]) {
       float dnext = this.center.dist(next.center);
       if (dnext < SPRING_LENGTH) {
         stroke(0, 255, 0);
@@ -24,8 +24,9 @@ class OrbNode extends Orb {
         stroke(0);
       }
       line(this.center.x, this.center.y + 2, next.center.x, next.center.y + 2);
+      line(this.center.x, this.center.y - 2, next.center.x, next.center.y - 2);
     }
-    if (previous != null) {
+    if (previous != null && toggles[2]) {
       float dprev = this.center.dist(previous.center);
       if (dprev < SPRING_LENGTH) {
         stroke(0, 255, 0);
@@ -35,6 +36,7 @@ class OrbNode extends Orb {
         stroke(0);
       }
       line(this.center.x, this.center.y - 2, previous.center.x, previous.center.y - 2);
+      line(this.center.x, this.center.y + 2, previous.center.x, previous.center.y + 2);
     }
   }
 
