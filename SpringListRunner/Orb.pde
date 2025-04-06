@@ -6,6 +6,8 @@ class Orb {
   float bsize;
   float mass;
   color c;
+  int charge;
+  boolean showElectromagnetic = false;
 
   Orb() {
     bsize = random(10, MAX_SIZE);
@@ -16,6 +18,7 @@ class Orb {
     velocity = new PVector();
     acceleration = new PVector();
     setColor();
+    charge = (int)random(-2, 3);
   }
 
   Orb(float x, float y, float s, float m) {
@@ -25,6 +28,7 @@ class Orb {
     velocity = new PVector();
     acceleration = new PVector();
     setColor();
+    charge = (int)random(-2, 3);
   }
 
   void move() {
@@ -69,6 +73,19 @@ class Orb {
     return direction;
   }
 
+  PVector getElectromagnetic(Orb other, float K) {
+    if (charge == 0 || other.charge == 0) {
+      return new PVector(0, 0);
+    }
+    float r = max(center.dist(other.center), MIN_SIZE);
+    float strength = K * charge * other.charge / (r * r);
+    PVector force = PVector.sub(other.center, center);
+    force.normalize();
+    force.mult(strength);
+    println(force);
+    return force;
+  }
+
   boolean yBounce() {
     if (center.y > height - bsize / 2) {
       velocity.y *= -1;
@@ -107,8 +124,24 @@ class Orb {
 
   void display() {
     noStroke();
-    fill(c);
+    if (showElectromagnetic) {
+      if (charge > 0) {
+        fill(255, 0, 0);
+      } else if (charge < 0) {
+        fill(0, 0, 255);
+      } else {
+        fill(0, 255, 0);
+      }
+    } else {
+      fill(c);
+    }
     circle(center.x, center.y, bsize);
-    fill(0);
+    if (showElectromagnetic) {
+      fill(255);
+      textAlign(CENTER, CENTER);
+      textSize(bsize * 0.3);
+      String chargeText = (charge >= 0) ? "+" + str(charge) : str(charge);
+      text(chargeText, center.x, center.y);
+    }
   }
 }

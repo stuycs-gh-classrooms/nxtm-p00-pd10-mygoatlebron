@@ -56,13 +56,39 @@ class OrbList {
       curr = curr.next;
     }
   }
-  
+
   void applySprings(int springLength, float springK) {
     OrbNode curr = front;
     while (curr != null) {
       curr.applySpring(springLength, springK);
       curr = curr.next;
     }
+  }
+
+  void applyElectromagnetic(float kConstant) {
+    OrbNode curr = front;
+    while (curr != null) {
+      curr.showElectromagnetic = true;
+      OrbNode other = curr.next;
+      while (other != null) {
+        other.showElectromagnetic = true;
+        PVector electromagnetic = curr.getElectromagnetic(other, kConstant);
+        curr.applyForce(electromagnetic);
+        electromagnetic = other.getElectromagnetic(curr, kConstant);
+        other.applyForce(electromagnetic);
+        other = other.next;
+      }
+      curr = curr.next;
+    }
+  }
+  
+  void cancelElectromagnetic()  {
+    OrbNode curr = front;
+    while (curr.next != null)  {
+      curr.showElectromagnetic = false;
+      curr = curr.next;
+    }
+    curr.showElectromagnetic = false;
   }
 
   void run() {

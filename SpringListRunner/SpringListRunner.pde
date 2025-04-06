@@ -5,6 +5,7 @@ float MIN_MASS = 10;
 float MAX_MASS = 100;
 float G_CONSTANT = 0.1;
 float D_COEF = 0.09;
+float K_CONSTANT = -40000;
 
 int SPRING_LENGTH = 150;
 float  SPRING_K = 0.005;
@@ -12,8 +13,9 @@ float  SPRING_K = 0.005;
 int GRAVITY = 0;
 int DRAGF = 1;
 int SPRINGF = 2;
-boolean[] toggles = new boolean[3];
-String[] modes = {"Gravity", "Drag", "Spring"};
+int ELECTROMAGNETICF = 3;
+boolean[] toggles = new boolean[4];
+String[] modes = {"Gravity", "Drag", "Spring", "Electromagnetic"};
 
 OrbList OrbsList = new OrbList();
 
@@ -39,6 +41,9 @@ void draw() {
   if (toggles[2])  {
     OrbsList.applySprings(SPRING_LENGTH, SPRING_K);
   }
+  if (toggles[3])  {
+    OrbsList.applyElectromagnetic(K_CONSTANT);
+  }
   OrbsList.run();
 }
 
@@ -51,6 +56,12 @@ void keyPressed() {
   }
   if (key == 's') {
     toggles[SPRINGF] = !toggles[SPRINGF];
+  }
+  if (key == 'e') {
+    toggles[ELECTROMAGNETICF] = !toggles[ELECTROMAGNETICF];
+    if (!toggles[ELECTROMAGNETICF])  {
+      OrbsList.cancelElectromagnetic();
+    }
   }
 }
 
