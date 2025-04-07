@@ -82,7 +82,6 @@ class Orb {
     PVector force = PVector.sub(other.center, center);
     force.normalize();
     force.mult(strength);
-    println(force);
     return force;
   }
 
@@ -144,4 +143,5 @@ class Orb {
       text(chargeText, center.x, center.y);
     }
   }
+  
 }

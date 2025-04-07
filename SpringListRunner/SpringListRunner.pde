@@ -1,5 +1,5 @@
 int NUM_ORBS = 10;
-int MIN_SIZE = 10;
+int MIN_SIZE = 40;
 int MAX_SIZE = 60;
 float MIN_MASS = 10;
 float MAX_MASS = 100;
@@ -14,8 +14,9 @@ int GRAVITY = 0;
 int DRAGF = 1;
 int SPRINGF = 2;
 int ELECTROMAGNETICF = 3;
-boolean[] toggles = new boolean[4];
-String[] modes = {"Gravity", "Drag", "Spring", "Electromagnetic"};
+int COMBINATION = 4;
+boolean[] toggles = new boolean[5];
+String[] modes = {"Gravity", "Drag", "Spring", "Electromagnetic", "Combination"};
 
 OrbList OrbsList = new OrbList();
 
@@ -35,13 +36,13 @@ void draw() {
   if (toggles[0]) {
     OrbsList.applyGravity(G_CONSTANT);
   }
-  if (toggles[1])  {
+  if (toggles[1]) {
     OrbsList.applyDrag(D_COEF);
   }
-  if (toggles[2])  {
+  if (toggles[2]) {
     OrbsList.applySprings(SPRING_LENGTH, SPRING_K);
   }
-  if (toggles[3])  {
+  if (toggles[3]) {
     OrbsList.applyElectromagnetic(K_CONSTANT);
   }
   OrbsList.run();
@@ -59,9 +60,15 @@ void keyPressed() {
   }
   if (key == 'e') {
     toggles[ELECTROMAGNETICF] = !toggles[ELECTROMAGNETICF];
-    if (!toggles[ELECTROMAGNETICF])  {
-      OrbsList.cancelElectromagnetic();
+  }
+  if (key == 'c') {
+    toggles[COMBINATION] = !toggles[COMBINATION];
+    for (int i = 0; i < COMBINATION; i++) {
+      toggles[i] = toggles[COMBINATION];
     }
+  }
+  if (!toggles[ELECTROMAGNETICF]) {
+    OrbsList.cancelElectromagnetic();
   }
 }
 
